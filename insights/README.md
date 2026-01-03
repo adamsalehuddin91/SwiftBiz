@@ -11,6 +11,9 @@ This folder contains **structured insights** that TOKWI generates automatically 
 - ✅ Major features you've implemented
 - ✅ Patterns and techniques you've learned
 - ✅ Deployment successes and achievements
+- ✅ Code reviews and quality analysis 🆕
+- ✅ Security audits and fixes 🆕
+- ✅ Performance optimizations 🆕
 
 Each insight follows a **portfolio-ready format** inspired by professional development practices.
 
@@ -38,7 +41,8 @@ Credit: Inspired by [source] 🔥
 ## 📁 Files in This Folder
 
 ### Templates
-- `insight-template.md` - Copy this for manual insights
+- `insight-template.md` - For bug fixes & features
+- `code-review-template.md` - For code reviews & audits 🆕
 - `README.md` - This file
 
 ### Auto-Generated Insights
@@ -51,9 +55,16 @@ Credit: Inspired by [source] 🔥
 
 ### Automatic (Recommended)
 ```bash
+# Implementation Insights
 "generate insight"         # TOKWI creates insight from current session
 "save insight"            # Auto-format and save
 "show insights"           # List all insights
+
+# Code Review Insights 🆕
+"review [file/project]"    # Analyze code quality
+"security review"          # Focus on security issues
+"performance review"       # Focus on optimization
+"generate review insight"  # Create review documentation
 ```
 
 ### Manual

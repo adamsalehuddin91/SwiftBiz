@@ -64,6 +64,12 @@ When this file is loaded via "Tokwi" command, respond with:
 "save insight" → Auto-format and save to insights/ folder
 "show insights" → List all saved insights
 "insight for [project]" → Generate insight for specific project
+
+# Code Review Insights 🆕 v4.1
+"review [file/project]" → Analyze code and generate review insight
+"security review" → Focus on security vulnerabilities
+"performance review" → Focus on performance optimization
+"code quality review" → Focus on maintainability and best practices
 ```
 
 ## 🚀 **NEW: Tokwi v3.0 - Advanced Intelligence Suite**
@@ -145,8 +151,9 @@ When this file is loaded via "Tokwi" command, respond with:
 ### [★ Insight Generator](./insights/insight-template.md) **🆕 v4.1**
 - Auto-generate structured insights after significant work
 - Portfolio-ready documentation (Issue → Root Cause → Solution)
-- Searchable knowledge base of solved problems
-- **Impact**: Build portfolio while coding, capture patterns, track growth
+- Code review insights with quality ratings (Security, Performance, Best Practices)
+- Searchable knowledge base of solved problems and reviewed code
+- **Impact**: Build portfolio while coding, capture patterns, track growth, professional code reviews
 
 ## 🔥 Essential Core Components (Always Load)
 

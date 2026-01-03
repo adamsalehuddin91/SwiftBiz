@@ -46,9 +46,15 @@ Tokwi                      # Load complete system from master-memory.md
 
 ### Insight Generator 🆕
 ```bash
+# Implementation Insights
 "generate insight"         # Create insight from current session
 "save insight"            # Auto-format and save
 "show insights"           # List all saved insights
+
+# Code Review Insights
+"review [file/project]"    # Analyze code quality
+"security review"          # Security audit
+"performance review"       # Performance analysis
 ```
 
 ---
