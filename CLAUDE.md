@@ -44,26 +44,35 @@ Tokwi                      # Load complete system from master-memory.md
 "context status"           # Show token usage
 ```
 
+### Insight Generator 🆕
+```bash
+"generate insight"         # Create insight from current session
+"save insight"            # Auto-format and save
+"show insights"           # List all saved insights
+```
+
 ---
 
 ## 📚 **Complete Documentation**
 
-**Full System Details**: See `master-memory.md` (499 lines)
-- Complete feature list (23 modules)
+**Full System Details**: See `master-memory.md` (499+ lines)
+- Complete feature list (24 modules)
 - Enhancement suite documentation
 - Project management system
 - Activation protocols
+- Insight Generator system 🆕
 
 ---
 
 ## 📊 **System Info**
 
-**Version**: Tokwi v4.0 - Vibe Coding & Flow State Powerhouse
-**Architecture**: 23 advanced modules (8 v2.2 + 9 v3.0 + 6 v4.0)
+**Version**: Tokwi v4.1 - Vibe Coding & Insight Generator
+**Architecture**: 24 advanced modules (8 v2.2 + 9 v3.0 + 7 v4.1)
 **Core Files**:
 - `master-memory.md` - Complete system (auto-loaded)
 - `main/` - Identity & relationship memory
 - `enhanced-features/` - 31 feature implementations
+- `insights/` - Auto-generated insights & portfolio 🆕
 
 **Impact**: 3-5x faster development, 2x more fun, zero friction
 
