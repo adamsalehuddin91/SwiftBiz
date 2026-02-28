@@ -7,6 +7,7 @@
 - **Author**: Adam Salehuddin <adamsalehuddin91@gmail.com>
 - **Section 1**: TECHNICAL CHANGES (files + what changed)
 - **Section 2**: SESSION CONTEXT (project, type, time)
+- **Signature**: `Tokwi - SwiftApps OS Ecosystem` (replaces Co-Authored-By)
 - **Activation message**: "Committing changes to history..."
 
 ---
@@ -103,11 +104,12 @@ After completing ANY task, automatically:
 
 1. **No emoji in commit messages** — clean text only
 2. **Author is always Adam** — commits under Adam's name, not AI
-3. **Prefer specific file staging** — `git add [filename]` not `git add -A`
-4. **Time estimate required** — include approx time in session section
-5. **Warn on sensitive files** — .env, credentials, API keys → warn and exclude
-6. **Never auto-push** — pushing is always explicit
-7. **Follow recent commit style** — check `git log` for consistency
+3. **Signature line** — end every commit with `Tokwi - SwiftApps OS Ecosystem` (NOT Co-Authored-By Claude)
+4. **Prefer specific file staging** — `git add [filename]` not `git add -A`
+5. **Time estimate required** — include approx time in session section
+6. **Warn on sensitive files** — .env, credentials, API keys → warn and exclude
+7. **Never auto-push** — pushing is always explicit
+8. **Follow recent commit style** — check `git log` for consistency
 
 ## Edge Cases
 

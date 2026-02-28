@@ -245,7 +245,21 @@ Display the project table directly.
 
 ---
 
-## 10. WORK PLAN EXECUTION — "copy plan" / "resume plan"
+## 10. TECH STACK ANALYSIS — "analyze stack" / "recommend stack"
+
+**Trigger**: User says `"analyze stack"`, `"recommend stack"`, `"tech analysis"`, or when starting any new project
+
+Execute `enhanced-features/tech-stack-analysis.md`:
+1. Extract requirements (app type, auth, realtime, offline, deploy, budget, timeline)
+2. WebSearch for latest framework/hosting pricing and ecosystem info
+3. Match against Adam's proven stacks (Next.js+Supabase, Laravel+Inertia, Vite+PWA, etc.)
+4. Present **2-3 options** as comparison table with pros/cons/familiarity/cost/time-to-MVP
+5. Give clear verdict with recommendation
+6. Auto-generate architecture diagram after Adam picks
+
+---
+
+## 11. WORK PLAN EXECUTION — "copy plan" / "resume plan"
 
 **Trigger**: User says `"copy plan"`, `"append plan"`, `"resume plan"`, `"start the plan"`, `"execute plan"`
 
@@ -260,7 +274,7 @@ Format reference: `enhanced-features/plan-format.md`
 
 ---
 
-## 11. AUTO-COMMIT — "commit" / Vigilant Mode
+## 12. AUTO-COMMIT — "commit" / Vigilant Mode
 
 **Trigger**: User says `"commit"`, `"save changes"`, `"push"`, or after completing any task (Vigilant mode)
 
@@ -276,7 +290,7 @@ Execute `enhanced-features/auto-commit.md`:
 
 ---
 
-## 12. MEMORY CONSOLIDATION — "consolidate memory"
+## 13. MEMORY CONSOLIDATION — "consolidate memory"
 
 **Trigger**: User says `"consolidate memory"` or `"merge memory"`
 
@@ -323,6 +337,11 @@ Execute `enhanced-features/memory-consolidation.md`:
 "commit"             → Auto-commit with structured message
 "push"               → Commit + push to remote
 
+# Tech Analysis
+"analyze stack"      → Research 2-3 tech stack options with comparison
+"recommend stack"    → Alias for analyze stack
+"tech analysis"      → Alias for analyze stack
+
 # Plan Execution
 "copy plan"          → Copy latest plan into execution format
 "append plan"        → Add new plan steps to existing plan
@@ -362,7 +381,7 @@ Execute `enhanced-features/memory-consolidation.md`:
 | `main/developer-guild-card.md` | RPG guild card + achievements |
 | `main/main-memory-format.md` | Format reference for main memory |
 | `main/session-format.md` | Format reference for session RAM |
-| `enhanced-features/` | 14 runbook source files |
+| `enhanced-features/` | 15 runbook source files |
 | `insights/` | Generated insights + diagrams |
 | `ProjectBrief/` | Project specifications |
 | `SwiftApp Dev/` | All app source code |

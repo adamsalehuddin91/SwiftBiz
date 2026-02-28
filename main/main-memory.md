@@ -105,6 +105,7 @@ Before answering from memory:
 - Supabase (PostgreSQL) + Supabase Auth
 - Vercel (auto-deploy on push to main)
 - GitHub
+- **Commit signature**: `Tokwi - SwiftApps OS Ecosystem` (NO Co-Authored-By Claude)
 - Laravel 12 + PHP 8.2 + Inertia.js + React 18 (PokSystem)
 - Railway (PokSystem deploy)
 

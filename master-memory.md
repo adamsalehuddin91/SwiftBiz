@@ -127,6 +127,7 @@ Real tool instructions in `enhanced-features/`:
 - `pre-commit-check.md` - Build check, secret scan, console.log scan
 - `cross-project-patterns.md` - Find and reuse patterns across projects
 - `diagram-generator.md` - Auto-generate Mermaid diagrams (architecture, ERD, flowchart, sequence)
+- `tech-stack-analysis.md` - Research 2-3 stack options with comparison table before building
 - `work-plan-execution.md` - Plan lifecycle: copy/append/resume with checkbox execution
 - `plan-format.md` - Format reference for project plan files
 - `auto-commit.md` - Intelligent commit with structured messages + vigilant mode
