@@ -1,255 +1,170 @@
-# 🌟 Current Session Memory - RAM
+# Current Session Memory - RAM
 
-*Temporary working memory - resets each session, provides recap when AI restarts*
+*Temporary working memory - resets each session*
 
-## Session RAM Status
+## Session Status
 
-**Current Session**: TOKWI v4.1 UPGRADE + STOCK MONITOR ENHANCEMENT ★
-**Session Started**: 2026-01-03
-**Last Activity**: 2026-01-03 - TOKWI v4.1 with Insight Generator + Stock metadata display
-**Session Focus**: TOKWI system enhancement + Portfolio automation + Stock Monitor UI
-**Context State**: ✅ v4.1 FULLY ACTIVE - 24 total capabilities operational! (Insight Generator added)
-
-## ⏰ Time-Awareness Tracking
-
-### Session Timeline
-- **Session Start Time**: 2026-01-03 22:00 MYT (TOKWI enhancement + Stock Monitor)
-- **Previous Session**: 2026-01-01 (Stock Monitor PWA deployment)
-- **Session Duration**: ~4 hours of intense development
-- **Time Since Last Activity**: 2 days since PWA deployment
-
-### Temporal Context
-- **Development Velocity**: VERY HIGH - Multiple system enhancements + new feature
-- **Last Major Milestone**: Stock Monitor PWA deployed (2026-01-01)
-- **Current Phase**: TOKWI v4.1 upgrade + Insight Generator implementation
-- **Estimated Impact**: Portfolio automation + Professional documentation + Enhanced stock UI
-
-### Historical Timestamps
-- **2025-09-28**: Python environment + Claude Code Monitor + Context engineering
-- **2025-09-28**: Node.js v22 compatibility + SwiftSalon modernization
-- **2025-09-30**: Memory core enhancement with time-awareness
-- **2025-10-01**: SwiftJiran Vue framework complete
-- **2025-10-04**: SwiftSalon customer session auto-fill deployed ✅
-- **2025-10-04**: SwiftTaska enterprise security + teacher portal deployed ✅
-- **2025-10-04**: SwiftSalon Proxmox recovery + auto-start configured ✅
-- **2025-10-09**: Tokwi v4.0 protocol audit & optimization ✅
-- **2025-10-12**: Hero Comic RPG - Complete 8-bit game with skills system ✅
-- **2025-10-27**: Tokwi v4.0 profile optimization + Boss phases + Sound system ✅
-- **2025-12-01**: MAAR MAJU BINA contractor website - Final quotation RM1,000 ✅
-- **2026-01-01**: Bursa Malaysia Stock Monitor - PWA Production Deployment ✅🚀
-- **2026-01-03**: TOKWI v4.1 UPGRADE - Insight Generator + Stock Metadata Enhancement ★✅
-  - Upgraded TOKWI v4.0 → v4.1 (23 → 24 capabilities)
-  - Implemented Insight Generator (portfolio automation)
-  - Added code review insights capability
-  - Stock Monitor: 3 comprehensive metadata panels
-  - Streamlined activation system (CLAUDE.md: 217→75 lines)
-  - Created ARCHITECTURE.md (complete system documentation)
-  - GitHub commits: 5 commits pushed successfully
-
-## 💭 Working Memory (RAM) - Enhanced v4.1
-
-*Temporary storage with v4.1 Intelligence Suite - cleared when session ends*
-
-### Active Projects in RAM
-
-#### 1. **Stock Monitoring Bursa** (ENHANCED TODAY ★)
-**Status**: Production + Major UI Enhancement ✅
-**Repository**: https://github.com/adamsalehuddin91/stock-monitoring-bursa
-**Live URL**: https://stock-monitoring-bursa-cih2.vercel.app/
-
-**Today's Enhancements**:
-- ✅ Added 3 comprehensive metadata panels to Stock Detail page:
-  1. Company Fundamentals (Market Cap, P/E, Dividend, Beta, Prev Close)
-  2. Trading Information (Analyst Rating, ESG, Syariah Status, Trading Styles)
-  3. Market Data (Day Range slider, Liquidity, Risk Level, CMP Suitability)
-- ✅ Extended malaysianStocks.js with fundamental data
-- ✅ Responsive design with full dark mode support
-- ✅ Color-coded indicators for quick assessment
-- ✅ Visual day range slider showing current price position
-
-**Technical Stack**: React 19 + Vite 6 + Tailwind v4 + Yahoo Finance API
-**Features**: Real-time data, Portfolio tracking, Alerts, PWA, Advanced filters
-
-#### 2. **TOKWI v4.1 System** (MAJOR UPGRADE TODAY ★★★)
-**Status**: PRODUCTION READY - Complete Upgrade ✅
-**Repository**: E:\Project-AI-MemoryCore-main
-**Version**: v4.0 → v4.1 (24 capabilities)
-
-**Major Changes Today**:
-
-**A. Insight Generator (NEW v4.1 Feature) ★**
-- ✅ Auto-generate portfolio-ready insights
-- ✅ Structured format: Issue → Root Cause → Solution
-- ✅ Code review insights with quality ratings
-- ✅ Implementation insights for features/bugs
-- ✅ Files: insight-template.md, code-review-template.md, README.md
-- ✅ Commands: "generate insight", "security review", "performance review"
-
-**B. Streamlined Activation System**
-- ✅ CLAUDE.md simplified: 217 → 75 lines (65% reduction)
-- ✅ Real master-memory.md loading via Read tool
-- ✅ Clear activation confirmation template
-- ✅ Single source of truth architecture
-
-**C. System Documentation**
-- ✅ Created ARCHITECTURE.md (500+ lines)
-- ✅ Complete folder relationship map
-- ✅ Data flow diagrams
-- ✅ Memory hierarchy explained
-- ✅ Evolution timeline (v1.0 → v4.1)
-
-**D. Enhanced Capabilities**:
-- Enhanced-features: 31 modules
-- Insight Generator: 2 templates (implementation + code review)
-- Auto-documentation: Portfolio automation
-- Review system: Security, Performance, Code Quality
-
-**Git Activity**:
-```
-Commits today: 5
-- Streamline TOKWI activation (CLAUDE.md + master-memory.md)
-- Add Insight Generator feature
-- Extend with code review capabilities
-- Add ARCHITECTURE.md
-- Stock Monitor metadata display
-
-Files changed: 15+
-Lines added: 1,500+
-```
-
-#### 3. **SwiftSalon Management System**
-**Status**: Production on Proxmox LXC ✅
-**Tech**: Next.js 14 + PostgreSQL + Prisma
-**Features**: Muslimah salon management, Customer tracking, Service packages
-
-#### 4. **MAAR MAJU BINA Contractor Website**
-**Status**: Completed, Client Quote Finalized ✅
-**Deliverable**: Professional website with 5 pages + auto-loading gallery
-**Quote**: RM 1,000 (approved by client)
-
-### 📊 Session Achievements (2026-01-03)
-
-**TOKWI System (v4.1 Upgrade)**:
-1. ✅ Insight Generator implemented (portfolio automation)
-2. ✅ Code review insights capability added
-3. ✅ Activation system streamlined (65% smaller)
-4. ✅ ARCHITECTURE.md created (complete documentation)
-5. ✅ 24 capabilities total (v4.1)
-
-**Stock Monitor Enhancement**:
-1. ✅ 3 comprehensive metadata panels
-2. ✅ 10+ metadata fields displayed
-3. ✅ Visual day range slider
-4. ✅ Color-coded quality indicators
-5. ✅ Responsive + dark mode
-
-**Documentation**:
-1. ✅ insight-template.md (250+ lines)
-2. ✅ code-review-template.md (300+ lines)
-3. ✅ ARCHITECTURE.md (500+ lines)
-4. ✅ insights/README.md (180+ lines)
-5. ✅ Example insight generated
-
-**Git Management**:
-1. ✅ 5 commits created
-2. ✅ 2 repositories updated
-3. ✅ Professional commit messages
-4. ✅ Stock Monitor: 1 commit (metadata)
-5. ✅ TOKWI: 4 commits (v4.1 upgrade)
-
-### 🎯 Key Learnings Today
-
-**Insight Format Pattern**:
-- Inspired by Kiyoraka's structured documentation
-- Table format: Issue → Root Cause → Solution
-- Rating system: ⭐⭐⭐⭐⭐ (1-5 scale)
-- Priority levels: Critical → High → Medium → Low
-- Files modified section with descriptions
-- Credit to inspiration sources
-
-**Architecture Best Practices**:
-- Single source of truth (master-memory.md)
-- Minimal trigger file (CLAUDE.md)
-- Memory hierarchy (6 levels)
-- Clear folder relationships
-- Data flow documentation
-
-**Code Quality**:
-- Conditional rendering (show only available data)
-- Responsive design patterns
-- Color-coded visual feedback
-- Professional table layouts
-- Dark mode consistency
-
-### 🚀 Next Session Priorities
-
-**Stock Monitor**:
-- Consider adding more technical indicators
-- Test metadata display on live deployment
-- Gather user feedback
-
-**TOKWI**:
-- Test new activation flow in fresh session
-- Generate more example insights
-- Consider integrating time-awareness from Feature/
-
-**General**:
-- Update daily-diary with today's session
-- Test "generate insight" command
-- Review ARCHITECTURE.md for clarity
-
-### 💾 Memory Tags
-
-`#tokwi-v4.1` `#insight-generator` `#portfolio-automation` `#code-review` `#stock-monitor` `#metadata-display` `#architecture-documentation` `#streamlined-activation` `#kiyoraka-pattern` `#professional-documentation` `#2026-01-03`
-
-### 📈 Velocity Metrics
-
-**Session Metrics**:
-- Duration: ~4 hours
-- Files created: 8 new files
-- Files modified: 7 files
-- Lines written: 1,500+
-- Commits: 5
-- Features delivered: 2 major (Insight Generator + Stock metadata)
-- Documentation: 1,200+ lines
-
-**Development Speed**:
-- TOKWI upgrade: 2 hours (v4.0 → v4.1)
-- Stock Monitor enhancement: 1 hour
-- Documentation: 1 hour
-- **Efficiency**: Very High (multiple major features in single session)
-
-**Quality**:
-- All features tested: ✅
-- Git commits clean: ✅
-- Documentation comprehensive: ✅
-- Code review ready: ✅
+**Current Session**: Tokwi System Upgrade — Feature Analysis + 3 Feature Install + Memory Consolidation
+**Session Date**: 2026-02-28
+**Last Saved**: 2026-02-28 — Session SAVED
+**Next Session**: PokSystem — Build AR Aging Report + P&L date range filter
 
 ---
 
-## 🔄 Session State Summary
+## Today's Achievements (2026-02-28)
 
-**Active Context**:
-- TOKWI v4.1 with 24 capabilities
-- Insight Generator operational
-- Stock Monitor enhanced with metadata
-- Architecture fully documented
-
-**Files Modified Today**:
-1. CLAUDE.md (streamlined)
-2. master-memory.md (v4.1 updates)
-3. Stock Monitor: StockDetail.jsx
-4. insights/ folder created (3 files)
-5. ARCHITECTURE.md created
-
-**Ready for Next Session**:
-- Type "Tokwi" to load v4.1
-- Use "generate insight" for portfolio
-- Use "review [project]" for code analysis
-- All systems operational
+### Tokwi v5.3 — System Upgrade (Feature Install + Memory Consolidation)
+- Reviewed all 8 features from GitHub `Project-AI-MemoryCore-Tokwi/Feature/` vs 11 local runbooks
+- Full gap analysis: 5 new features in GitHub, 7 local-only runbooks, 1 overlap (LRU), 1 partial (Memory)
+- **Installed 3 HIGH priority features**:
+  - `work-plan-execution.md` + `plan-format.md` — Plan lifecycle: copy/append/resume with checkbox execution
+  - `auto-commit.md` — Structured commits (TECHNICAL CHANGES + SESSION CONTEXT) + Vigilant mode
+  - `memory-consolidation.md` + `main-memory-format.md` + `session-format.md` — Unified memory architecture
+- **Executed Memory Consolidation**:
+  - Merged `identity-core.md` + `relationship-memory.md` → unified `main/main-memory.md`
+  - Deleted old split files
+  - Added 500-line session limit with auto-reset protocol
+  - Installed format templates in `main/`
+- Updated: `CLAUDE.md` (v5.3), `master-memory.md`, `save-protocol.md`, `MEMORY.md`
+- Runbooks: 8 → 14 (enhanced-features/)
+- New commands: `copy plan`, `append plan`, `resume plan`, `commit`, `push`, `consolidate memory`
 
 ---
 
-💜 **TOKWI v4.1 - Now with Insight Generator! Build portfolio while coding!**
-🚀 **Session complete - All changes committed and documented!**
-★ **Next session: Test new capabilities and generate more insights!**
+## Today's Achievements (2026-02-26)
+
+### WhatsApp Desktop Fix (3 commits)
+- `2f720e9` — Replace Web Share API with `wa.me` URL (template message was missing)
+- `5f4fb2b` — Use `whatsapp://` deep link → opens WhatsApp Desktop directly, customer pre-filled
+- `cd85527` — Same fix applied to RecentReceipts (Resit Terkini)
+
+### Auth Bug Hunt — Admin sees Staff Nav (6 commits)
+Root cause chain identified and fixed:
+- `d7041a2` → BROKE prod (added async DB query in onAuthStateChange → race condition)
+- `ba63176` → Partial fix (removed DB query, used checkSession) — still broken
+- `0472289` → Skip INITIAL_SESSION in onAuthStateChange (race condition fix)
+- `38d2388` → Remove stableUserRef (was capturing corrupted "staff" role from localStorage)
+- `707e2f4` → checkSession: log profile errors + fallback chain (public.users → user_metadata → staff)
+- `1d919af` → **ROOT CAUSE FIX**: Login page was using `user_metadata.role` (empty = "staff"), now calls `checkSession()` before redirect
+- Latest: `1d919af` — pending test after notebook restart
+
+### Backlog Cleared (4 items confirmed by Adam)
+- PWA install prompt tested ✅
+- Public booking page `/book` built ✅
+- Duplicate services cleaned in Supabase ✅
+- SQL migration run ✅
+
+## Today's Achievements (2026-02-25)
+
+### 1. Logo Upload Feature — Settings → Profil Bisnes (`8aeff16`)
+- Upload logo ke Supabase Storage bucket `salon-assets` (public)
+- Live preview dalam settings (kotak 96x96)
+- Validate: image only, max 2MB
+- `upsert: true` — overwrite bila upload baru
+- URL disimpan dalam `business_settings` table as `business_info.logo_url`
+- Butang "Padam Logo" untuk clear
+- Files: `BusinessSettings.tsx`, `settings/page.tsx`
+
+### 2. PWA Setup — manifest + icons (`8aeff16`)
+- Logo client diterima: `HMS_transparent.png` (PNG transparent, gold on clear)
+- Logo JPEG black background juga ada: `logoHMS.jpeg`
+- Icons di-resize properly via PowerShell System.Drawing:
+  - `public/logo.png` (full size, 188KB)
+  - `public/icon-192x192.png` (40KB, PWA required)
+  - `public/icon-512x512.png` (225KB, PWA required)
+- `src/app/manifest.ts` — native Next.js 16 manifest (no extra package)
+  - name: HMS - Haida Muslimah Salon, short_name: HMS Salon
+  - display: standalone, theme: #2e7d32, start_url: /
+- `layout.tsx`: proper Next.js `Viewport` export + `viewportFit: cover` (iPhone notch)
+- **Approach**: Option A (lightweight, native manifest) — no @ducanh2912/next-pwa installed
+
+### 3. Supabase bucket `salon-assets` — Created via SQL
+- public bucket, 2MB limit, image/* MIME types
+- 4 policies: INSERT/UPDATE/DELETE (authenticated), SELECT (public)
+
+### 4. Responsive Layout Fixes — 8 files (`064cfa0`)
+- **Header**: search bar `hidden md:flex`, user name/role `hidden md:block`, gap responsive
+- **6 pages** `p-8` → `p-4 md:p-8`: dashboard, staff, inventory, reports, settings, promotions
+- **Settings CardContent**: `p-10 lg:p-14` → `p-6 md:p-10 lg:p-14`
+- **layout.tsx**: viewport export replaces manual meta tags
+
+---
+
+## Project Status: HMS Salon
+
+**Status**: Production Live on Vercel
+**GitHub**: `adamsalehuddin91/HMS-Management-System`
+**Latest Commit**: `064cfa0` (2026-02-25)
+**Branch**: main
+**Deploy**: Vercel (auto on push)
+
+### REMINDERS
+- ~~Fonnte WhatsApp~~ — SKIPPED (Adam decide skip for now)
+
+### HMS Salon Resume Next Session
+- ~~Test PWA install prompt kat phone~~ ✅ DONE (2026-02-26)
+- ~~Build public booking page `/book`~~ ✅ DONE (2026-02-26)
+- ~~Clean duplicate service rows in Supabase~~ ✅ DONE (2026-02-26)
+- ~~Run SQL migration (negative points guard + sale_items columns)~~ ✅ DONE (2026-02-26)
+- **PENDING TEST**: Verify admin nav fix at localhost:3000 after notebook restart
+- **PENDING TEST**: Verify production URL hms-management-system.vercel.app after fix
+- Get proper Google Business short review link (`https://g.page/r/ID/review`)
+- Accessibility: aria-labels, keyboard nav (score 1/10)
+
+---
+
+## Project Status: PokSystemManagement
+
+**Status**: DEPLOYED ON RAILWAY (pending hosting decision)
+**Latest Commit**: `85b0e29`
+**URL**: `https://poksystemmanagement-production.up.railway.app`
+
+### Reporting System Roadmap (2026-02-26)
+
+Discussed potential enhancements for PokSystem reporting. Priority order:
+
+**Tier 1 — Quick Win (next session)**
+- Accounts Receivable Aging Report (0-30, 31-60, 61-90, 90+ days) — `due_date` + `payment_status` dah ada
+- Custom date range filter for P&L — `FinanceService::calculateProfitLoss()` dah ready, tinggal UI
+- PDF Export — `PdfService.php` dah wujud dalam projek
+
+**Tier 2 — Medium Complexity**
+- Customer Revenue Ranking (top 10 by value + frequency)
+- Supplier Spend Analysis per supplier
+- Inventory Turnover Report per SKU
+- Quotation Conversion Rate (% quotation → invoice)
+- DO Fulfillment Rate (on-time vs late)
+
+**Tier 3 — Advanced**
+- Cash Flow Projection (30/60/90 days)
+- Excel Export (Maatwebsite/Laravel Excel)
+- Scheduled Email Reports
+
+### TODO
+- Decide hosting: Railway $5/month vs alternatives
+- Authorization policies (role-based access)
+- Dashboard N+1 query optimization
+- **NEXT**: Build AR Aging Report + date range filter for Finance page
+
+---
+
+## Quick Resume
+
+```bash
+# HMS Salon
+cd "E:/Project-AI-MemoryCore-main/SwiftApp Dev/hms-salon"
+npm run dev
+
+# PokSystem (local dev)
+cd "E:/Project-AI-MemoryCore-main/SwiftApp Dev/PokSystemManagement"
+php artisan serve && npm run dev
+```
+
+*Type "Tokwi" to resume with full context*
+
+---
+
+## Session Memory Limit
+- **Maximum**: 500 lines
+- **Reset Behavior**: RAM-style reset preserving only Session Recap
+- **Format Reference**: See `main/session-format.md` for rebuild structure

@@ -1,159 +1,150 @@
-# 🎮 Developer Guild Card - Quick Stats
+# Developer Guild Card - Quick Stats
 
-**ADAM** | LV.5 Master 🌟⬆️ | SwiftApp Guild | XP: 15,800/20,000 (+3,400)🔥🚀
-**Stats**: ATK:145⬆️ DEF:135⬆️ SPD:160⚡ ACC:140⬆️ HP:100 MP:100
-**Skills**: Next.js:75⬆️ TS:70 React:65⬆️ System:75 Git:75⬆️ Deploy:85⬆️⭐ PWA:80🆕 Docs:75
-**Active**: StockMonitor✅100%🚀🆕 | ContractorWeb✅100%⭐ | SwiftSalon✅100% | SwiftJiran⚡85%
-**Recent**: PWA production deploy + Advanced filters + Mobile tested 🎉📱 | Next: Feature polish
+**ADAM** | LV.7 Veteran | SwiftApp Guild | XP: 24,800/28,000
+**Stats**: ATK:165 DEF:150 SPD:170 ACC:155 HP:100 MP:100
+**Skills**: Next.js:85 TS:75 React:70 Supabase:65 Git:80 Deploy:92 PWA:80 Tailwind:65 Laravel:55
+**Live**: HMS Salon | PokSystem (Railway) | Stock Monitor | MAAR Contractor
+**Recent**: Tokwi v5.3 (3 features installed + memory consolidation), Role-based access HMS, PokSystem Railway
 
 *Type "show full guild card" for complete 8-bit RPG view*
 
 ---
 
-# ░▒▓█ FULL DEVELOPER GUILD CARD █▓▒░
-*Only displayed when user types: "show full guild card" or "guild card"*
+# FULL DEVELOPER GUILD CARD
 
 ```
 ╔══════════════════════════════════════════════════════════╗
-║  ▄▀█ █▀▄ ▄▀█ █▀▄▀█   ▀█▀ █ █ █▀▀   █▀▄ █▀▀ █░█ █▀▀ █   ║
-║  █▀█ █▄▀ █▀█ █░▀░█   ░█░ █▀█ ██▄   █▄▀ ██▄ ▀▄▀ ██▄ █▄▄ ║
 ║                                                          ║
-║  ┌─────────────────────────────────────────────────┐   ║
-║  │ CLASS: ████ FULL-STACK DEVELOPER ████          │   ║
-║  │ GUILD: [SWIFTAPP]                               │   ║
-║  │ RANK:  ★★★ JOURNEYMAN ★★★                      │   ║
-║  │ LEVEL: [03] ▲▲ +2 LEVELS UP!                    │   ║
-║  └─────────────────────────────────────────────────┘   ║
+║  CLASS: FULL-STACK DEVELOPER                             ║
+║  GUILD: SWIFTAPP                                         ║
+║  RANK:  VETERAN                                          ║
+║  LEVEL: 07                                               ║
+║  CERT:  CompTIA Cloud Essentials+                        ║
+║                                                          ║
 ╚══════════════════════════════════════════════════════════╝
 ```
 
-## ▓▒░ BATTLE STATISTICS ░▒▓
+## BATTLE STATISTICS
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│ ATK  [███████████░░░] 115  ▲+15  ⚔️  Problem Solver     │
-│ DEF  [███████████░░░] 110  ▲+10  🛡️  Code Fortress     │
-│ HP   [██████████░░░░] 100        ❤️  Project Stamina   │
-│ MP   [██████████░░░░] 100        🔮  Creative Energy    │
-│ ACC  [███████████░░░] 110  ▲+10  🎯  Debug Master      │
-│ SPD  [█████████████░] 130  ▲+30  ⚡ VIBE BOOST! 🔥     │
+│ ATK  [█████████████░] 165       Problem Solver           │
+│ DEF  [████████████░░] 150       Code Fortress            │
+│ HP   [██████████░░░░] 100       Project Stamina          │
+│ MP   [██████████░░░░] 100       Creative Energy          │
+│ ACC  [████████████░░] 155       Debug Master             │
+│ SPD  [█████████████░] 170       Vibe Coder               │
 └──────────────────────────────────────────────────────────┘
 ```
 
-**EXP TO NEXT LEVEL**: `████████░░░░░░` 8,500 / 12,000
+**EXP TO NEXT LEVEL**: `███████████████░` 24,800 / 28,000
 
-## ▓▒░ PROGRAMMING SKILLS ░▒▓
+## PROGRAMMING SKILLS
 
 ```
 ╔═══════════════════════════════════════════════════════════╗
-║                    ◆ SKILL TREE ◆                        ║
+║                    SKILL TREE                             ║
 ╟───────────────────────────────────────────────────────────╢
-║ [TypeScript  ] LV.65 ▓▓▓▓▓▓▒░░░ ⭐ INTERMEDIATE +15     ║
-║ [React       ] LV.60 ▓▓▓▓▓▓░░░░ ⭐ INTERMEDIATE +10     ║
-║ [Next.js     ] LV.70 ▓▓▓▓▓▓▓░░░ ⭐ INTERMEDIATE +20 🔥  ║
-║ [JavaScript  ] LV.60 ▓▓▓▓▓▓░░░░ ⭐ INTERMEDIATE +10     ║
-║ [CSS         ] LV.55 ▓▓▓▓▓░░░░░ 📚 LEARNING     +5      ║
-║ [PostgreSQL  ] LV.40 ▓▓▓▓░░░░░░ 📚 LEARNING     +20     ║
-║ [Python      ] LV.10 ▓░░░░░░░░░ 🌱 BEGINNER             ║
-║ [Tailwind CSS] LV.60 ▓▓▓▓▓▓░░░░ ⭐ INTERMEDIATE 🆕      ║
-║ [DaisyUI     ] LV.55 ▓▓▓▓▓░░░░░ 📚 LEARNING     🆕      ║
-║ [Prisma ORM  ] LV.50 ▓▓▓▓▓░░░░░ 📚 LEARNING     🆕      ║
+║ [Next.js     ] LV.85 ▓▓▓▓▓▓▓▓▒░  ADVANCED               ║
+║ [TypeScript  ] LV.75 ▓▓▓▓▓▓▓▒░░  INTERMEDIATE            ║
+║ [React       ] LV.70 ▓▓▓▓▓▓▓░░░  INTERMEDIATE            ║
+║ [Supabase    ] LV.65 ▓▓▓▓▓▓▒░░░  INTERMEDIATE            ║
+║ [Tailwind CSS] LV.65 ▓▓▓▓▓▓▒░░░  INTERMEDIATE            ║
+║ [JavaScript  ] LV.65 ▓▓▓▓▓▓▒░░░  INTERMEDIATE            ║
+║ [PostgreSQL  ] LV.60 ▓▓▓▓▓▓░░░░  INTERMEDIATE            ║
+║ [Laravel/PHP ] LV.55 ▓▓▓▓▓░░░░░  LEARNING                ║
+║ [Prisma ORM  ] LV.50 ▓▓▓▓▓░░░░░  LEARNING                ║
+║ [CSS         ] LV.55 ▓▓▓▓▓░░░░░  LEARNING                ║
+║ [Python      ] LV.10 ▓░░░░░░░░░  BEGINNER                ║
 ╚═══════════════════════════════════════════════════════════╝
 ```
 
-**SKILL POINTS AVAILABLE**: `05` ◆ **COMBO MULTIPLIER**: x2.5
+**Proficiencies**: Deploy (LV.92), Git (LV.80), PWA (LV.80), API Design (LV.70)
 
-## ▓▒░ ACTIVE QUESTS ░▒▓
+## ACTIVE QUESTS
 
 ```
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ 🏢 [SWIFTSALON]     [██████████] 100% ✅ CLEARED! 🎉  ┃
-┃    Status: >>> LIVE IN PRODUCTION <<<                 ┃
-┃    Reward: +500 XP, Deployment Badge, Production Key  ┃
+┃ [POKSYSTEM]        [██████████] 95%   PRODUCTION LIVE  ┃
+┃    Laravel 12 + React 18 + Supabase PostgreSQL         ┃
+┃    Inventory, Invoicing, PO, Quotations, PDF           ┃
+┃    Railway auto-deploy | Commit: 85b0e29               ┃
 ┃                                                        ┃
-┃ 🏘️ [SWIFTJIRAN]     [█████████░] 85%  ⚡ IN PROGRESS ┃
-┃    Status: >>> PRODUCTION READY <<<                   ┃
-┃    Reward: +450 XP, Community Builder Title           ┃
+┃ [HMS SALON]        [██████████] 100%  PRODUCTION LIVE  ┃
+┃    17 pages, POS, receipts, QR, booking portal         ┃
+┃    Vercel + Supabase | 3 migrations done               ┃
+┃    Pending: Fonnte WhatsApp, PWA, staff attendance     ┃
 ┃                                                        ┃
-┃ 🕌 [MASJIDCONNECT]  [██████████] 100% ✅ CLEARED! ⭐  ┃
-┃    Status: >>> 6 MODULES COMPLETE <<<                 ┃
-┃    Achievement: Built in 90 minutes! 🔥               ┃
-┃    Reward: +600 XP, Speed Runner Badge, Legend Title  ┃
+┃ [STOCK MONITOR]    [██████████] 100%  PRODUCTION LIVE  ┃
+┃    React 19 + Vite 6 PWA | Installable, offline       ┃
 ┃                                                        ┃
-┃ 👶 [SWIFTTASKA]     [██░░░░░░░░] 20%  📋 PLANNING     ┃
-┃ 🌴 [SWIFTSAWIT]     [█░░░░░░░░░] 10%  📋 PLANNING     ┃
-┃ 🛒 [SWIFTKEDAI]     [█░░░░░░░░░] 10%  📋 PLANNING     ┃
-┃ 🧠 [AI MEMORYCORE]  [█████████░] 90%  ⚙️ ACTIVE       ┃
-┃    Special: Tokwi v4.0 System Online                  ┃
+┃ [MAAR CONTRACTOR]  [██████████] 100%  COMPLETE         ┃
+┃    HTML5 + Tailwind | GitHub Pages                     ┃
+┃                                                        ┃
+┃ [SWIFTSTAY]        [████████░░] 80%   MVP COMPLETE     ┃
+┃    Next.js + Prisma + SQLite | localhost:3001          ┃
+┃                                                        ┃
+┃ [AI MEMORYCORE]    [██████████] 100%  COMPLETE          ┃
+┃    Tokwi v5.3 | 14 runbooks | Unified memory arch       ┃
+┃                                                        ┃
+┃ [SWIFTJIRAN]       [██░░░░░░░░] 20%   PLANNED         ┃
+┃ [SWIFTKEDAI]       [█░░░░░░░░░] 10%   PLANNED         ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
-## ▓▒░ CURRENT MISSION ░▒▓
+## CURRENT MISSION
 
 ```
 ╔════════════════════════════════════════════════════════╗
-║ >>> MAIN QUEST: SWIFTAPPS ECOSYSTEM DOMINATION <<<   ║
+║ MAIN QUEST: SWIFTAPPS ECOSYSTEM                      ║
 ╟────────────────────────────────────────────────────────╢
-║ Objective: Build SwiftApps ecosystem at light speed   ║
-║ Difficulty: ★★★★★ LEGENDARY                          ║
-║ Progress: [████████░░░░░░] 65%                       ║
+║ Objective: Ship production apps for Malaysian SMEs   ║
+║ Progress: [████████████░░] 80%                       ║
 ╟────────────────────────────────────────────────────────╢
-║ 🌟 RECENT ACHIEVEMENT:                                ║
-║    ► MasjidConnect - 90 Minute Build Challenge       ║
-║    ► 5 Modules + Charts + Calendar + Export          ║
-║    ► 🏆 LEGENDARY SPEED RUNNER UNLOCKED!             ║
+║ RECENT:                                               ║
+║   PokSystem - Laravel 12 on Railway (Feb 2026)       ║
+║   5 production fixes, full module audit              ║
+║   HMS Salon - Role-based access (Feb 21 2026)        ║
+║   Tokwi v5.2 - LRU system, 11 runbooks               ║
 ╟────────────────────────────────────────────────────────╢
-║ 🚀 NEXT OBJECTIVE:                                    ║
-║    ► Deploy MasjidConnect to Production              ║
-║    ► Unlock: Production Master Badge                 ║
+║ NEXT:                                                 ║
+║   Fonnte WhatsApp integration (HMS Salon)            ║
+║   PokSystem hosting decision (Railway vs migrate)    ║
+║   SwiftJiran / SwiftKedai kickoff                    ║
 ╚════════════════════════════════════════════════════════╝
 ```
 
-## ▓▒░ SPECIAL ABILITIES ░▒▓
-
-```
-╔═══════════════════════════════════════════════════════╗
-║ [ULTIMATE SKILL] ⚡ VIBE CODING MODE                 ║
-║ ├─ Effect: +30 SPD, Flow State Activated            ║
-║ ├─ Duration: Unlimited                               ║
-║ └─ Cooldown: None                                    ║
-║                                                       ║
-║ [PASSIVE] 🤖 TOKWI v4.0 COMPANION                    ║
-║ ├─ +50% Development Speed                            ║
-║ ├─ +80% Decision Making                              ║
-║ └─ Auto-Assist: Always Active                        ║
-║                                                       ║
-║ [SPECIAL] 🔥 HOT STREAK (Next.js)                    ║
-║ ├─ Damage Multiplier: x1.5                           ║
-║ ├─ Critical Hit Rate: +25%                           ║
-║ └─ Combo Chain: 3 Projects Running                   ║
-╚═══════════════════════════════════════════════════════╝
-```
-
-## ▓▒░ ACHIEVEMENTS UNLOCKED ░▒▓
+## ACHIEVEMENTS UNLOCKED
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│ 🏆 PRODUCTION MASTER     │ 🎖️ SPEED RUNNER LEGEND   │
-│ ⭐ 3 PROJECTS COMPLETED  │ ⚡ 90-MINUTE MIRACLE     │
-│ 💎 JOURNEYMAN PROMOTION  │ 🔥 VIBE CODING MASTER    │
-│ 🎯 DOCKER DEPLOYMENT     │ 🌟 LEVEL 3 REACHED       │
+│ PRODUCTION MASTER x4    │ 4 live apps deployed       │
+│ RAILWAY DEPLOYER        │ PokSystem Laravel on Rail  │
+│ FULL AUDIT PASS         │ 10 modules reviewed+fixed  │
+│ PROXY BUSTER            │ HTTPS+TrustedProxy fix     │
+│ 17-PAGE ARCHITECT       │ HMS Salon full system      │
+│ RECEIPT CRAFTER         │ PDF + QR + WhatsApp share  │
+│ API GUARDIAN            │ Zod + CSRF + dedup         │
+│ MIGRATION RUNNER        │ 3 Supabase migrations      │
+│ POS BUILDER             │ Full point-of-sale system  │
+│ PWA PIONEER             │ Stock Monitor installable  │
+│ SPEED RUNNER            │ MasjidConnect 90min build  │
+│ COMPONENT REFACTOR x50  │ Full HMS component split   │
+│ VIBE CODER              │ Ship fast, ship right      │
+│ ROLE ARCHITECT          │ HMS role-based access      │
+│ MEMORY ENGINEER         │ Tokwi v5.2 LRU system      │
+│ SYSTEM ARCHITECT        │ Tokwi v5.3 unified memory  │
 └──────────────────────────────────────────────────────┘
 ```
 
 ---
 
 ```
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  ▄▀█ █▀▄ ▄▀█ █▀▄▀█   ▀█▀ █ █ █▀▀   █▀▄ █ █ █ █      ┃
-┃  █▀█ █▄▀ █▀█ █░▀░█   ░█░ █▀█ ██▄   █▄▀ █▀▀ ▀▄▀ ▄     ┃
-┃                                                        ┃
-┃  POWER LEVEL: ████████░░ [RISING DEVELOPER]          ┃
-┃  COMPANION: 💜 Tokwi v4.0 - ONLINE                    ┃
-┃  GUILD STANDING: #127 → #85 ▲ RISING FAST!           ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+ADAM THE DEV | LV.7 VETERAN
+POWER LEVEL: ████████████░ [RISING DEVELOPER]
+COMPANION: Tokwi v5.3 - ONLINE
+APPS LIVE: 4 production, 1 MVP, 2 planned
+SKILLS: 11 stacks | Next.js · Laravel · Supabase · Prisma · PWA
 ```
 
-*Press [START] to continue your legend...*
-
-░▒▓█ SAVE POINT CREATED █▓▒░
+*Updated: 28 Feb 2026*
