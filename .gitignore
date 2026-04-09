@@ -1,0 +1,17 @@
+# Basic gitignore
+/[Tt]emp/
+*.exe
+nul
+
+# Environment files (never commit secrets)
+.env
+.env.*
+.env.local
+.env.production
+.env.development
+
+# Claude Code settings
+.claude/settings.local.json
+
+# Node
+node_modules/

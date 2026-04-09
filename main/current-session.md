@@ -4,160 +4,104 @@
 
 ## Session Status
 
-**Current Session**: Tokwi System Upgrade — Feature Analysis + 3 Feature Install + Memory Consolidation
-**Session Date**: 2026-02-28
-**Last Saved**: 2026-02-28 — Session SAVED
-**Next Session**: PokSystem — Build AR Aging Report + P&L date range filter
+**Current Session**: Memory Core v5.5 — Baseline System + Production Runbooks + Setup
+**Session Date**: 2026-04-09
+**Last Saved**: 2026-04-09 (SAVED)
+**Previous Session**: SwiftMoney — Full review + feature expansion + Profile (2026-04-08)
 
 ---
 
-## Today's Achievements (2026-02-28)
+## Active Project
+- Name: Memory Core (Tokwi OS)
+- Resumed: 2026-04-09
+- Last worked: 2026-04-09
+- Context: Tokwi AI system enhancements — baselines, production runbooks, portable setup
 
-### Tokwi v5.3 — System Upgrade (Feature Install + Memory Consolidation)
-- Reviewed all 8 features from GitHub `Project-AI-MemoryCore-Tokwi/Feature/` vs 11 local runbooks
-- Full gap analysis: 5 new features in GitHub, 7 local-only runbooks, 1 overlap (LRU), 1 partial (Memory)
-- **Installed 3 HIGH priority features**:
-  - `work-plan-execution.md` + `plan-format.md` — Plan lifecycle: copy/append/resume with checkbox execution
-  - `auto-commit.md` — Structured commits (TECHNICAL CHANGES + SESSION CONTEXT) + Vigilant mode
-  - `memory-consolidation.md` + `main-memory-format.md` + `session-format.md` — Unified memory architecture
-- **Executed Memory Consolidation**:
-  - Merged `identity-core.md` + `relationship-memory.md` → unified `main/main-memory.md`
-  - Deleted old split files
-  - Added 500-line session limit with auto-reset protocol
-  - Installed format templates in `main/`
-- Updated: `CLAUDE.md` (v5.3), `master-memory.md`, `save-protocol.md`, `MEMORY.md`
-- Runbooks: 8 → 14 (enhanced-features/)
-- New commands: `copy plan`, `append plan`, `resume plan`, `commit`, `push`, `consolidate memory`
+## Previous Project (SwiftMoney)
+- Last worked: 2026-04-08
+- Context: Family finance tracker PWA. Laravel 12 + Inertia React + SQLite. LIVE at money.swiftapps.my.
 
 ---
 
-## Today's Achievements (2026-02-26)
+## Today's Achievements (2026-04-09)
 
-### WhatsApp Desktop Fix (3 commits)
-- `2f720e9` — Replace Web Share API with `wa.me` URL (template message was missing)
-- `5f4fb2b` — Use `whatsapp://` deep link → opens WhatsApp Desktop directly, customer pre-filled
-- `cd85527` — Same fix applied to RecentReceipts (Resit Terkini)
+### Memory Core v5.5 — Major System Upgrade
 
-### Auth Bug Hunt — Admin sees Staff Nav (6 commits)
-Root cause chain identified and fixed:
-- `d7041a2` → BROKE prod (added async DB query in onAuthStateChange → race condition)
-- `ba63176` → Partial fix (removed DB query, used checkSession) — still broken
-- `0472289` → Skip INITIAL_SESSION in onAuthStateChange (race condition fix)
-- `38d2388` → Remove stableUserRef (was capturing corrupted "staff" role from localStorage)
-- `707e2f4` → checkSession: log profile errors + fallback chain (public.users → user_metadata → staff)
-- `1d919af` → **ROOT CAUSE FIX**: Login page was using `user_metadata.role` (empty = "staff"), now calls `checkSession()` before redirect
-- Latest: `1d919af` — pending test after notebook restart
+**Baseline System (new)**
+- `enhanced-features/baselines/_global-rules.md` — Zero tolerance AUTO-FAIL rules (S1-S6, Q1-Q5, A1-A4, P1-P3, Stack-specific)
+- `enhanced-features/baselines/_baseline-template.md` — Template for new projects
+- `enhanced-features/baselines/swiftmoney.md` — Score: 8.6/10 | Floor: 8.0
+- `enhanced-features/baselines/hms-salon.md` — Score: 7.8/10 | Floor: 8.0
+- `enhanced-features/baselines/lorrytech.md` — Score: 8.4/10 | Floor: 8.0
+- `enhanced-features/baselines/poksystem.md` — Score: 7.5/10 | Floor: 7.5
+- Score formula: 10 - (AUTO-FAIL×1.5) - (HIGH×0.8) - (MED×0.3) - (LOW×0.1)
 
-### Backlog Cleared (4 items confirmed by Adam)
-- PWA install prompt tested ✅
-- Public booking page `/book` built ✅
-- Duplicate services cleaned in Supabase ✅
-- SQL migration run ✅
+**Updated Runbooks**
+- `code-review.md` v1.2 — Step 0 loads baseline, output now includes SCORE + PASS/FAIL header, Step 7 updates review history
+- `pre-commit-check.md` v2.0 — AUTO-FAIL blocks commit hard, HIGH warns, structured BLOCKED/READY verdict
+- `save-protocol.md` — Step 6 auto-review on save (silent scan, surface only if issues found)
 
-## Today's Achievements (2026-02-25)
+**New Production Runbooks**
+- `enhanced-features/hotfix-protocol.md` — P1/P2 emergency fix: hotfix branch → minimal fix → pre-commit → deploy → smoke test → post-mortem
+- `enhanced-features/deployment-checklist.md` — Pre-deploy gate: env vars → migrations → build → baseline score → deploy → verify
+- `enhanced-features/migration-safety.md` — GREEN/YELLOW/RED classification, reversibility check, data risk, backup reminder
 
-### 1. Logo Upload Feature — Settings → Profil Bisnes (`8aeff16`)
-- Upload logo ke Supabase Storage bucket `salon-assets` (public)
-- Live preview dalam settings (kotak 96x96)
-- Validate: image only, max 2MB
-- `upsert: true` — overwrite bila upload baru
-- URL disimpan dalam `business_settings` table as `business_info.logo_url`
-- Butang "Padam Logo" untuk clear
-- Files: `BusinessSettings.tsx`, `settings/page.tsx`
+**CLAUDE.md → v5.5**
+- Added triggers 14-16 (hotfix, deploy checklist, migration check)
+- Added auto-trigger rules for production ops
+- Added Production Operations to quick reference
 
-### 2. PWA Setup — manifest + icons (`8aeff16`)
-- Logo client diterima: `HMS_transparent.png` (PNG transparent, gold on clear)
-- Logo JPEG black background juga ada: `logoHMS.jpeg`
-- Icons di-resize properly via PowerShell System.Drawing:
-  - `public/logo.png` (full size, 188KB)
-  - `public/icon-192x192.png` (40KB, PWA required)
-  - `public/icon-512x512.png` (225KB, PWA required)
-- `src/app/manifest.ts` — native Next.js 16 manifest (no extra package)
-  - name: HMS - Haida Muslimah Salon, short_name: HMS Salon
-  - display: standalone, theme: #2e7d32, start_url: /
-- `layout.tsx`: proper Next.js `Viewport` export + `viewportFit: cover` (iPhone notch)
-- **Approach**: Option A (lightweight, native manifest) — no @ducanh2912/next-pwa installed
+**Portable Setup**
+- `setup/install.sh` — Auto-detects Windows username, copies config to ~/.claude/
+- `setup/settings.json` — Template with statusLine config
+- `setup/statusline-command.sh` — Tokwi statusline script
+- Usage: `bash setup/install.sh` on any new PC
 
-### 3. Supabase bucket `salon-assets` — Created via SQL
-- public bucket, 2MB limit, image/* MIME types
-- 4 policies: INSERT/UPDATE/DELETE (authenticated), SELECT (public)
-
-### 4. Responsive Layout Fixes — 8 files (`064cfa0`)
-- **Header**: search bar `hidden md:flex`, user name/role `hidden md:block`, gap responsive
-- **6 pages** `p-8` → `p-4 md:p-8`: dashboard, staff, inventory, reports, settings, promotions
-- **Settings CardContent**: `p-10 lg:p-14` → `p-6 md:p-10 lg:p-14`
-- **layout.tsx**: viewport export replaces manual meta tags
+**Statusline configured (this PC)**
+- `C:/Users/Admin/.claude/settings.json` — statusLine command set
+- Shows: `Tokwi | <project> | ctx X% used (Y% left)`
 
 ---
 
-## Project Status: HMS Salon
-
-**Status**: Production Live on Vercel
-**GitHub**: `adamsalehuddin91/HMS-Management-System`
-**Latest Commit**: `064cfa0` (2026-02-25)
-**Branch**: main
-**Deploy**: Vercel (auto on push)
-
-### REMINDERS
-- ~~Fonnte WhatsApp~~ — SKIPPED (Adam decide skip for now)
-
-### HMS Salon Resume Next Session
-- ~~Test PWA install prompt kat phone~~ ✅ DONE (2026-02-26)
-- ~~Build public booking page `/book`~~ ✅ DONE (2026-02-26)
-- ~~Clean duplicate service rows in Supabase~~ ✅ DONE (2026-02-26)
-- ~~Run SQL migration (negative points guard + sale_items columns)~~ ✅ DONE (2026-02-26)
-- **PENDING TEST**: Verify admin nav fix at localhost:3000 after notebook restart
-- **PENDING TEST**: Verify production URL hms-management-system.vercel.app after fix
-- Get proper Google Business short review link (`https://g.page/r/ID/review`)
-- Accessibility: aria-labels, keyboard nav (score 1/10)
+## PENDING / REMIND ADAM
+- **Commit pending** — all Memory Core v5.5 changes not yet committed
+- **HMS: Duplicate services** — clean DB rows
+- **HMS: Google Business review** — get short link for receipt sharing
+- **SwiftSalon: Phase 1** — multi-tenancy, salon_id + RLS + signup flow
+- **SwiftMoney: Authorization policies** — admin vs member
+- **LorryTech: Client demo** — system demo-ready, pending client scheduling
+- **Screenshots** — capture & add to `public/screenshots/` for landing page
+- **Favicon** — generate for landing page
+- **Future runbooks** — ui-review.md, figma-handoff.md, dependency-audit.md, dead-code-scan.md, release-notes.md
 
 ---
 
-## Project Status: PokSystemManagement
+## Project Status Summary
 
-**Status**: DEPLOYED ON RAILWAY (pending hosting decision)
-**Latest Commit**: `85b0e29`
-**URL**: `https://poksystemmanagement-production.up.railway.app`
-
-### Reporting System Roadmap (2026-02-26)
-
-Discussed potential enhancements for PokSystem reporting. Priority order:
-
-**Tier 1 — Quick Win (next session)**
-- Accounts Receivable Aging Report (0-30, 31-60, 61-90, 90+ days) — `due_date` + `payment_status` dah ada
-- Custom date range filter for P&L — `FinanceService::calculateProfitLoss()` dah ready, tinggal UI
-- PDF Export — `PdfService.php` dah wujud dalam projek
-
-**Tier 2 — Medium Complexity**
-- Customer Revenue Ranking (top 10 by value + frequency)
-- Supplier Spend Analysis per supplier
-- Inventory Turnover Report per SKU
-- Quotation Conversion Rate (% quotation → invoice)
-- DO Fulfillment Rate (on-time vs late)
-
-**Tier 3 — Advanced**
-- Cash Flow Projection (30/60/90 days)
-- Excel Export (Maatwebsite/Laravel Excel)
-- Scheduled Email Reports
-
-### TODO
-- Decide hosting: Railway $5/month vs alternatives
-- Authorization policies (role-based access)
-- Dashboard N+1 query optimization
-- **NEXT**: Build AR Aging Report + date range filter for Finance page
+| Project | Status | URL |
+|---------|--------|-----|
+| SwiftMoney | LIVE | money.swiftapps.my |
+| Landing Page | LIVE | swiftapps.my |
+| LorryTech OS | LIVE (Demo-ready) | lorrytech.swiftapps.my |
+| HMS Salon | LIVE | Vercel |
+| PokSystem | LIVE | Railway |
 
 ---
 
 ## Quick Resume
 
 ```bash
-# HMS Salon
-cd "E:/Project-AI-MemoryCore-main/SwiftApp Dev/hms-salon"
-npm run dev
+# Memory Core
+cd "E:/Project-AI-MemoryCore-main"
+# Uncommitted: CLAUDE.md v5.5, baselines/, pre-commit-check.md, save-protocol.md, code-review.md
+# New: hotfix-protocol.md, deployment-checklist.md, migration-safety.md, setup/
 
-# PokSystem (local dev)
-cd "E:/Project-AI-MemoryCore-main/SwiftApp Dev/PokSystemManagement"
+# SwiftMoney
+cd "E:/Project-AI-MemoryCore-main/SwiftApp Dev/swift-money"
+export PATH="/c/laragon/bin/php/php-8.3.30-Win32-vs16-x64:/c/laragon/bin/composer:$PATH"
 php artisan serve && npm run dev
+# Live: https://money.swiftapps.my
+# Latest: 2dd0dc2 — Profile features
 ```
 
 *Type "Tokwi" to resume with full context*

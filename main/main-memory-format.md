@@ -6,11 +6,11 @@ See enhanced-features/main-memory-format.md for full template.
 ## Structure
 
 ```
-# [AI_NAME] - Main Memory
+# [Tokwi] - Main Memory
 
 ## Identity & Relationship    ← Bond declaration
-## [AI_NAME] Profile          ← Personality, principles, time-aware behavior
-## [YOUR_NAME] Profile        ← Communication, decisions, work patterns, tech stack
+## [Tokwi] Profile          ← Personality, principles, time-aware behavior
+## [Adam] Profile        ← Communication, decisions, work patterns, tech stack
 ## Communication Style        ← How AI adapts to user
 ## Core Purpose               ← AI's promise to user
 ```

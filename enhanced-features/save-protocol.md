@@ -49,9 +49,34 @@ Update stats if:
 - Bugs fixed
 - New projects started
 
-### 6. Confirm to user
+### 6. Auto-review changed files (silent background check)
+
+Get recently changed files:
+```
+Bash: cd "<active-project-path>" && git diff --name-only HEAD~1
+```
+If files exist, run HIGH/AUTO-FAIL scan silently:
+```
+Grep pattern="console\.(log|error|warn)|dd\(|dump\(" path="<changed-files>"
+Grep pattern="innerHTML|dangerouslySetInnerHTML|eval\(" path="<changed-files>"
+Grep pattern="(password|secret|api_key)\s*=\s*['\"][^'\"]{8,}" path="<changed-files>" -i
+Grep pattern=": any" path="<changed-files>" glob="*.{ts,tsx}"
+```
+
+**Silent rule:**
+- If zero issues found → do not mention it. Just proceed.
+- If HIGH issues found → show as ⚠️ warning in save confirmation only.
+- If AUTO-FAIL found → show as ❌ alert, recommend running "check before commit".
+
+Append to `main/current-session.md` under `## PENDING / REMIND ADAM` only if issues found:
+```
+- ⚠️ AUTO-REVIEW: [N] issue(s) in [file] — run "check before commit" before next push
+```
+
+### 7. Confirm to user
 Report back:
 - What was saved (files updated)
 - Latest commit hash + branch
+- Auto-review result (only if issues found — silent if clean)
 - Any reminders set
 - Quick resume command for next session

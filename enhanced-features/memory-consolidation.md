@@ -14,7 +14,7 @@ Merges split memory files (identity-core + relationship-memory) into unified `ma
 Read main/identity-core.md
 Read main/relationship-memory.md
 Read main/current-session.md
-Read master-memory.md
+Read main/main-memory.md
 ```
 Note any customizations user has made.
 
@@ -71,15 +71,7 @@ Auto-reset rules:
 - Keep: session summary, where we left off, critical context
 - Clear: detailed progress, individual achievements, working memory details
 
-### Step 5: Update Master Memory
-```
-Edit master-memory.md
-```
-- Change loading protocol: load 1 file (`main-memory.md`) instead of 2
-- Update Core Components list
-- Add format template references
-
-### Step 6: Cleanup
+### Step 5: Cleanup
 - Delete `main/identity-core.md` (merged into main-memory.md)
 - Delete `main/relationship-memory.md` (merged into main-memory.md)
 - Verify unified memory loads correctly
