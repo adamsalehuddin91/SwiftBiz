@@ -1,7 +1,7 @@
 # Project List — Master Index
 
 *LRU Project Management — Tokwi v5.5*
-*Updated: 2026-04-09*
+*Updated: 2026-04-11*
 
 ---
 
@@ -9,26 +9,27 @@
 
 | # | Project | Status | Last Accessed | File |
 |---|---------|--------|---------------|------|
-| 1 | LorryTech OS | 🟢 LIVE (Demo-ready) | 2026-04-07 | `active/lorrytech-os.md` |
-| 2 | SwiftSalon | 🗓️ PLANNING | 2026-04-02 | `active/swift-salon.md` |
-| 3 | HMS Salon | 🟢 LIVE | 2026-03-31 | `active/hms-salon.md` |
-| 4 | SwiftApp OS | 🟡 Deploying to Coolify | 2026-03-28 | `active/swiftappos.md` |
-| 5 | SwiftMoney | 🟢 LIVE (Feature Expansion Done) | 2026-04-08 | `active/swift-money.md` |
-| 6 | PokSystem | 🟡 LIVE (Railway pending) | 2026-02-23 | `active/pok-system.md` |
-| 7 | Stock Monitor | 🟢 LIVE | 2026-01-03 | `active/stock-monitor.md` |
-| 8 | SwiftStay | 🔵 MVP (localhost) | 2025-11 | `active/swiftstay.md` |
-| 9 | SwiftJiran | 🗓️ PLANNED (20%) | — | `active/swiftjiran.md` |
-| 10 | SwiftKedai | 🗓️ PLANNED (10%) | — | `active/swiftkedai.md` |
+| 1 | Qalbu | 🟡 Built (localhost) — deploy pending | 2026-04-11 | `active/qalbu.md` |
+| 2 | LorryTech OS | 🟢 LIVE (Demo-ready) | 2026-04-07 | `active/lorrytech-os.md` |
+| 3 | SwiftSalon | 🗓️ PLANNING | 2026-04-02 | `active/swift-salon.md` |
+| 4 | HMS Salon | 🟢 LIVE | 2026-03-31 | `active/hms-salon.md` |
+| 5 | SwiftApp OS | 🟡 Deploying to Coolify | 2026-03-28 | `active/swiftappos.md` |
+| 6 | SwiftMoney | 🟢 LIVE (SaaS-ready v1.3, real users) | 2026-04-11 | `active/swift-money.md` |
+| 7 | PokSystem | 🟡 LIVE (Railway pending) | 2026-02-23 | `active/pok-system.md` |
+| 8 | Stock Monitor | 🟢 LIVE | 2026-01-03 | `active/stock-monitor.md` |
+| 9 | SwiftStay | 🔵 MVP (localhost) | 2025-11 | `active/swiftstay.md` |
+| 10 | SwiftJiran | 🗓️ PLANNED (20%) | — | `active/swiftjiran.md` |
 
 **Slots available**: 0 of 10
 
 ---
 
-## Archived Coding Projects (1)
+## Archived Coding Projects (2)
 
 | Project | Archived | Reason |
 |---------|----------|--------|
 | MAAR Contractor | 2026-04-02 | Complete — slot freed for SwiftSalon |
+| SwiftKedai | 2026-04-11 | Planned (10%) — slot freed for Qalbu |
 
 ---
 

@@ -1,0 +1,164 @@
+{
+  "name": "Qalbu — Wisdom Ingest Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "hours", "hoursInterval": 6 }]
+        }
+      },
+      "id": "cron-trigger",
+      "name": "Every 6 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "path": "qalbu-ingest",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook (Telegram Push)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 500],
+      "webhookId": "qalbu-ingest"
+    },
+    {
+      "parameters": {
+        "feedUrl": "https://muftiwp.gov.my/ms/feed",
+        "options": {}
+      },
+      "id": "rss-muftiwp",
+      "name": "RSS — MuftiWP",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge items from both triggers\nconst items = $input.all();\nreturn items.map(item => ({\n  json: {\n    raw_content: item.json.contentSnippet || item.json.content || item.json.body || '',\n    source: item.json.creator || item.json.author || 'MuftiWP',\n  }\n})).filter(i => i.json.raw_content.length > 30);"
+      },
+      "id": "normalize",
+      "name": "Normalize Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [500, 400]
+    },
+    {
+      "parameters": {
+        "resource": "text",
+        "operation": "message",
+        "modelId": {
+          "__rl": true,
+          "value": "gemini-1.5-flash",
+          "mode": "list"
+        },
+        "messages": {
+          "values": [
+            {
+              "role": "user",
+              "content": "=Kamu adalah AI yang mengekstrak wisdom rohani Islam.\n\nDaripada teks berikut, hasilkan SATU ayat wisdom yang:\n- Ringkas (1-3 baris)\n- Impactful, bukan akademik\n- Dalam Bahasa Melayu\n- Tema: salah satu daripada [Tawakal, Sabar, Rezeki, Syukur]\n\nTeks:\n{{ $json.raw_content }}\n\nBalas dalam format JSON sahaja (tiada teks lain):\n{\n  \"content\": \"wisdom di sini\",\n  \"category\": \"Tawakal|Sabar|Rezeki|Syukur\",\n  \"language\": \"ms\"\n}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "gemini-ai",
+      "name": "Gemini — Extract Wisdom",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [740, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  try {\n    // Parse Gemini response\n    let text = item.json.text || item.json.content || '';\n    // Strip markdown code blocks if present\n    text = text.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n    const parsed = JSON.parse(text);\n\n    // Generate SHA256 hash\n    const encoder = new TextEncoder();\n    const data = encoder.encode(parsed.content);\n    const hashBuffer = await crypto.subtle.digest('SHA-256', data);\n    const hashArray = Array.from(new Uint8Array(hashBuffer));\n    const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');\n\n    const source = $('Normalize Input').item.json.source || 'MuftiWP';\n\n    results.push({\n      json: {\n        content: parsed.content,\n        source: source,\n        category: parsed.category,\n        language: parsed.language || 'ms',\n        content_hash: hash,\n      }\n    });\n  } catch (e) {\n    // Skip malformed responses\n    continue;\n  }\n}\n\nreturn results;"
+      },
+      "id": "parse-hash",
+      "name": "Parse + Hash",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [980, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.QALBU_API_URL }}/api/v1/wisdom/ingest",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-N8N-TOKEN",
+              "value": "={{ $env.QALBU_N8N_TOKEN }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            { "name": "content",      "value": "={{ $json.content }}" },
+            { "name": "source",       "value": "={{ $json.source }}" },
+            { "name": "category",     "value": "={{ $json.category }}" },
+            { "name": "language",     "value": "={{ $json.language }}" },
+            { "name": "content_hash", "value": "={{ $json.content_hash }}" }
+          ]
+        },
+        "options": {
+          "response": { "response": { "neverError": true } }
+        }
+      },
+      "id": "post-laravel",
+      "name": "POST → Laravel API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1220, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst results = { created: 0, duplicate: 0, error: 0 };\n\nfor (const item of items) {\n  const status = item.json.statusCode || 200;\n  if (status === 201) results.created++;\n  else if (status === 409) results.duplicate++;\n  else results.error++;\n}\n\nconsole.log(`Qalbu ingest: +${results.created} new | ${results.duplicate} dup | ${results.error} err`);\nreturn [{ json: results }];"
+      },
+      "id": "log-result",
+      "name": "Log Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1460, 400]
+    }
+  ],
+  "connections": {
+    "Every 6 Hours": {
+      "main": [[{ "node": "RSS — MuftiWP", "type": "main", "index": 0 }]]
+    },
+    "Webhook (Telegram Push)": {
+      "main": [[{ "node": "Normalize Input", "type": "main", "index": 0 }]]
+    },
+    "RSS — MuftiWP": {
+      "main": [[{ "node": "Normalize Input", "type": "main", "index": 0 }]]
+    },
+    "Normalize Input": {
+      "main": [[{ "node": "Gemini — Extract Wisdom", "type": "main", "index": 0 }]]
+    },
+    "Gemini — Extract Wisdom": {
+      "main": [[{ "node": "Parse + Hash", "type": "main", "index": 0 }]]
+    },
+    "Parse + Hash": {
+      "main": [[{ "node": "POST → Laravel API", "type": "main", "index": 0 }]]
+    },
+    "POST → Laravel API": {
+      "main": [[{ "node": "Log Result", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": ["qalbu", "wisdom", "ingest"]
+}
