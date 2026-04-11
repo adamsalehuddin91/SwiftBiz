@@ -82,7 +82,7 @@
           "values": [
             {
               "role": "user",
-              "content": "=Kamu adalah AI yang mengekstrak wisdom rohani Islam.\n\nDaripada teks berikut, hasilkan SATU ayat wisdom yang:\n- Ringkas (1-3 baris sahaja)\n- Impactful dan bermakna, bukan akademik\n- Dalam Bahasa Melayu\n- Kalau teks dalam bahasa lain, terjemah ke BM dengan natural\n- Tema: salah satu daripada [Tawakal, Sabar, Rezeki, Syukur]\n\nTeks:\n{{ $json.raw_content }}\n\nSumber asal: {{ $json.source }}\n\nBalas dalam format JSON sahaja (tiada teks lain):\n{\n  \"content\": \"wisdom dalam BM di sini\",\n  \"category\": \"Tawakal|Sabar|Rezeki|Syukur\",\n  \"language\": \"ms\"\n}"
+              "content": "=Kamu adalah AI rohani Islam yang menghasilkan refleksi harian berkualiti tinggi.\n\nDaripada teks berikut, hasilkan satu refleksi lengkap yang terdiri dari 4 bahagian:\n\n1. **content** — terjemahan/ringkasan dalam BM yang impactful (1-2 ayat, bukan akademik)\n2. **arabic_text** — teks asal dalam bahasa Arab jika ada (kosongkan jika tiada)\n3. **meaning** — maksud yang lebih mendalam dalam BM (2-3 ayat, mudah difahami orang awam)\n4. **lesson** — pengajaran/refleksi praktikal untuk kehidupan harian (2-3 ayat, actionable)\n5. **category** — pilih satu: Tawakal, Sabar, Rezeki, atau Syukur\n\nTeks input:\n{{ $json.raw_content }}\n\nSumber: {{ $json.source }}\nJenis: {{ $json.type }}\n\nBalas dalam format JSON sahaja (tiada teks lain, tiada markdown):\n{\n  \"content\": \"terjemahan/ringkasan BM di sini\",\n  \"arabic_text\": \"teks Arab asal atau kosong\",\n  \"meaning\": \"maksud mendalam dalam BM\",\n  \"lesson\": \"pengajaran praktikal untuk kehidupan harian\",\n  \"category\": \"Tawakal|Sabar|Rezeki|Syukur\",\n  \"language\": \"ms\"\n}"
             }
           ]
         },
@@ -96,7 +96,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  try {\n    let text = item.json.text || item.json.content || '';\n    text = text.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n    const parsed = JSON.parse(text);\n\n    // SHA256 hash\n    const encoder = new TextEncoder();\n    const data = encoder.encode(parsed.content);\n    const hashBuffer = await crypto.subtle.digest('SHA-256', data);\n    const hashArray = Array.from(new Uint8Array(hashBuffer));\n    const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');\n\n    const source = $('Normalize Input').item.json.source || 'Unknown';\n\n    results.push({\n      json: {\n        content: parsed.content,\n        source: source,\n        category: parsed.category,\n        language: parsed.language || 'ms',\n        content_hash: hash,\n      }\n    });\n  } catch (e) {\n    continue;\n  }\n}\n\nreturn results;"
+        "jsCode": "const items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  try {\n    let text = item.json.text || item.json.content || '';\n    text = text.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n    const parsed = JSON.parse(text);\n\n    // SHA256 hash\n    const encoder = new TextEncoder();\n    const data = encoder.encode(parsed.content);\n    const hashBuffer = await crypto.subtle.digest('SHA-256', data);\n    const hashArray = Array.from(new Uint8Array(hashBuffer));\n    const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');\n\n    const source = $('Normalize Input').item.json.source || 'Unknown';\n\n    results.push({\n      json: {\n        content:      parsed.content,\n        arabic_text:  parsed.arabic_text || null,\n        meaning:      parsed.meaning || null,\n        lesson:       parsed.lesson || null,\n        source:       source,\n        category:     parsed.category,\n        language:     parsed.language || 'ms',\n        content_hash: hash,\n      }\n    });\n  } catch (e) {\n    continue;\n  }\n}\n\nreturn results;"
       },
       "id": "parse-hash",
       "name": "Parse + Hash",
@@ -119,6 +119,9 @@
         "bodyParameters": {
           "parameters": [
             { "name": "content",      "value": "={{ $json.content }}" },
+            { "name": "arabic_text",  "value": "={{ $json.arabic_text }}" },
+            { "name": "meaning",      "value": "={{ $json.meaning }}" },
+            { "name": "lesson",       "value": "={{ $json.lesson }}" },
             { "name": "source",       "value": "={{ $json.source }}" },
             { "name": "category",     "value": "={{ $json.category }}" },
             { "name": "language",     "value": "={{ $json.language }}" },

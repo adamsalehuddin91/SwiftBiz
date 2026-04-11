@@ -23,12 +23,15 @@ class WisdomController extends Controller
 
         return response()->json([
             'data' => [
-                'id'       => $wisdom->id,
-                'content'  => $wisdom->content,
-                'source'   => $wisdom->source,
-                'category' => $wisdom->category,
-                'language' => $wisdom->language,
-                'tags'     => $wisdom->tags,
+                'id'          => $wisdom->id,
+                'content'     => $wisdom->content,
+                'arabic_text' => $wisdom->arabic_text,
+                'meaning'     => $wisdom->meaning,
+                'lesson'      => $wisdom->lesson,
+                'source'      => $wisdom->source,
+                'category'    => $wisdom->category,
+                'language'    => $wisdom->language,
+                'tags'        => $wisdom->tags,
             ],
         ]);
     }
@@ -37,11 +40,14 @@ class WisdomController extends Controller
     public function ingest(Request $request): JsonResponse
     {
         $validated = $request->validate([
-            'content'  => 'required|string',
-            'source'   => 'required|string|max:255',
-            'category' => 'required|in:Tawakal,Sabar,Rezeki,Syukur',
-            'language' => 'sometimes|in:ms,ar,en',
-            'tags'     => 'sometimes|array',
+            'content'     => 'required|string',
+            'arabic_text' => 'sometimes|nullable|string',
+            'meaning'     => 'sometimes|nullable|string',
+            'lesson'      => 'sometimes|nullable|string',
+            'source'      => 'required|string|max:255',
+            'category'    => 'required|in:Tawakal,Sabar,Rezeki,Syukur',
+            'language'    => 'sometimes|in:ms,ar,en',
+            'tags'        => 'sometimes|array',
         ]);
 
         $result = $this->wisdomService->ingest($validated);

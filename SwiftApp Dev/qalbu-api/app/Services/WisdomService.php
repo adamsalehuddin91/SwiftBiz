@@ -32,6 +32,9 @@ class WisdomService
 
         $wisdom = Wisdom::create([
             'content'      => $data['content'],
+            'arabic_text'  => $data['arabic_text'] ?? null,
+            'meaning'      => $data['meaning'] ?? null,
+            'lesson'       => $data['lesson'] ?? null,
             'source'       => $data['source'],
             'category'     => $data['category'],
             'language'     => $data['language'] ?? 'ms',

@@ -8,6 +8,9 @@ class Wisdom extends Model
 {
     protected $fillable = [
         'content',
+        'arabic_text',
+        'meaning',
+        'lesson',
         'source',
         'category',
         'language',
