@@ -11,7 +11,7 @@
       "name": "Every 6 Hours",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
-      "position": [0, 300]
+      "position": [0, 400]
     },
     {
       "parameters": {
@@ -23,29 +23,51 @@
       "name": "Webhook (Telegram Push)",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
-      "position": [0, 500],
+      "position": [0, 600],
       "webhookId": "qalbu-ingest"
     },
     {
       "parameters": {
-        "feedUrl": "https://muftiwp.gov.my/ms/feed",
+        "method": "GET",
+        "url": "=https://api.sunnah.com/v1/hadiths/random",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-Key",
+              "value": "={{ $env.SUNNAH_API_KEY }}"
+            }
+          ]
+        },
         "options": {}
       },
-      "id": "rss-muftiwp",
-      "name": "RSS — MuftiWP",
-      "type": "n8n-nodes-base.rssFeedRead",
-      "typeVersion": 1,
-      "position": [260, 300]
+      "id": "sunnah-api",
+      "name": "Sunnah.com — Random Hadith",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 280]
     },
     {
       "parameters": {
-        "jsCode": "// Merge items from both triggers\nconst items = $input.all();\nreturn items.map(item => ({\n  json: {\n    raw_content: item.json.contentSnippet || item.json.content || item.json.body || '',\n    source: item.json.creator || item.json.author || 'MuftiWP',\n  }\n})).filter(i => i.json.raw_content.length > 30);"
+        "method": "GET",
+        "url": "https://api.alquran.cloud/v1/ayah/random/ms.basmeih",
+        "options": {}
+      },
+      "id": "quran-api",
+      "name": "Al-Quran Cloud — Random Ayat",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 500]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  const d = item.json;\n\n  // Sunnah.com response\n  if (d.hadith) {\n    const text = d.hadith.body || d.hadith.text || '';\n    const book = d.book?.title || d.collection || 'Hadith';\n    const grade = d.hadith.grades?.[0]?.grade || '';\n    const label = grade ? `${book} (${grade})` : book;\n    if (text.length > 20) {\n      results.push({ json: { raw_content: text, source: label, type: 'hadith' } });\n    }\n  }\n\n  // Al-Quran Cloud response\n  else if (d.data?.text) {\n    const text = d.data.text;\n    const surah = d.data.surah?.englishName || 'Al-Quran';\n    const ayah = d.data.numberInSurah;\n    const source = `Al-Quran — ${surah} (${ayah})`;\n    if (text.length > 20) {\n      results.push({ json: { raw_content: text, source, type: 'quran' } });\n    }\n  }\n\n  // Webhook / Telegram push\n  else if (d.body || d.text || d.content) {\n    const text = d.body || d.text || d.content || '';\n    if (text.length > 20) {\n      results.push({ json: { raw_content: text, source: d.source || 'Telegram', type: 'manual' } });\n    }\n  }\n}\n\nreturn results;"
       },
       "id": "normalize",
       "name": "Normalize Input",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [500, 400]
+      "position": [520, 400]
     },
     {
       "parameters": {
@@ -60,7 +82,7 @@
           "values": [
             {
               "role": "user",
-              "content": "=Kamu adalah AI yang mengekstrak wisdom rohani Islam.\n\nDaripada teks berikut, hasilkan SATU ayat wisdom yang:\n- Ringkas (1-3 baris)\n- Impactful, bukan akademik\n- Dalam Bahasa Melayu\n- Tema: salah satu daripada [Tawakal, Sabar, Rezeki, Syukur]\n\nTeks:\n{{ $json.raw_content }}\n\nBalas dalam format JSON sahaja (tiada teks lain):\n{\n  \"content\": \"wisdom di sini\",\n  \"category\": \"Tawakal|Sabar|Rezeki|Syukur\",\n  \"language\": \"ms\"\n}"
+              "content": "=Kamu adalah AI yang mengekstrak wisdom rohani Islam.\n\nDaripada teks berikut, hasilkan SATU ayat wisdom yang:\n- Ringkas (1-3 baris sahaja)\n- Impactful dan bermakna, bukan akademik\n- Dalam Bahasa Melayu\n- Kalau teks dalam bahasa lain, terjemah ke BM dengan natural\n- Tema: salah satu daripada [Tawakal, Sabar, Rezeki, Syukur]\n\nTeks:\n{{ $json.raw_content }}\n\nSumber asal: {{ $json.source }}\n\nBalas dalam format JSON sahaja (tiada teks lain):\n{\n  \"content\": \"wisdom dalam BM di sini\",\n  \"category\": \"Tawakal|Sabar|Rezeki|Syukur\",\n  \"language\": \"ms\"\n}"
             }
           ]
         },
@@ -70,17 +92,17 @@
       "name": "Gemini — Extract Wisdom",
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1,
-      "position": [740, 400]
+      "position": [760, 400]
     },
     {
       "parameters": {
-        "jsCode": "const items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  try {\n    // Parse Gemini response\n    let text = item.json.text || item.json.content || '';\n    // Strip markdown code blocks if present\n    text = text.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n    const parsed = JSON.parse(text);\n\n    // Generate SHA256 hash\n    const encoder = new TextEncoder();\n    const data = encoder.encode(parsed.content);\n    const hashBuffer = await crypto.subtle.digest('SHA-256', data);\n    const hashArray = Array.from(new Uint8Array(hashBuffer));\n    const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');\n\n    const source = $('Normalize Input').item.json.source || 'MuftiWP';\n\n    results.push({\n      json: {\n        content: parsed.content,\n        source: source,\n        category: parsed.category,\n        language: parsed.language || 'ms',\n        content_hash: hash,\n      }\n    });\n  } catch (e) {\n    // Skip malformed responses\n    continue;\n  }\n}\n\nreturn results;"
+        "jsCode": "const items = $input.all();\nconst results = [];\n\nfor (const item of items) {\n  try {\n    let text = item.json.text || item.json.content || '';\n    text = text.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n    const parsed = JSON.parse(text);\n\n    // SHA256 hash\n    const encoder = new TextEncoder();\n    const data = encoder.encode(parsed.content);\n    const hashBuffer = await crypto.subtle.digest('SHA-256', data);\n    const hashArray = Array.from(new Uint8Array(hashBuffer));\n    const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');\n\n    const source = $('Normalize Input').item.json.source || 'Unknown';\n\n    results.push({\n      json: {\n        content: parsed.content,\n        source: source,\n        category: parsed.category,\n        language: parsed.language || 'ms',\n        content_hash: hash,\n      }\n    });\n  } catch (e) {\n    continue;\n  }\n}\n\nreturn results;"
       },
       "id": "parse-hash",
       "name": "Parse + Hash",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [980, 400]
+      "position": [1000, 400]
     },
     {
       "parameters": {
@@ -89,14 +111,8 @@
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {
-              "name": "X-N8N-TOKEN",
-              "value": "={{ $env.QALBU_N8N_TOKEN }}"
-            },
-            {
-              "name": "Content-Type",
-              "value": "application/json"
-            }
+            { "name": "X-N8N-TOKEN", "value": "={{ $env.QALBU_N8N_TOKEN }}" },
+            { "name": "Content-Type", "value": "application/json" }
           ]
         },
         "sendBody": true,
@@ -117,7 +133,7 @@
       "name": "POST → Laravel API",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1220, 400]
+      "position": [1240, 400]
     },
     {
       "parameters": {
@@ -127,17 +143,23 @@
       "name": "Log Result",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1460, 400]
+      "position": [1480, 400]
     }
   ],
   "connections": {
     "Every 6 Hours": {
-      "main": [[{ "node": "RSS — MuftiWP", "type": "main", "index": 0 }]]
+      "main": [[
+        { "node": "Sunnah.com — Random Hadith", "type": "main", "index": 0 },
+        { "node": "Al-Quran Cloud — Random Ayat", "type": "main", "index": 0 }
+      ]]
     },
     "Webhook (Telegram Push)": {
       "main": [[{ "node": "Normalize Input", "type": "main", "index": 0 }]]
     },
-    "RSS — MuftiWP": {
+    "Sunnah.com — Random Hadith": {
+      "main": [[{ "node": "Normalize Input", "type": "main", "index": 0 }]]
+    },
+    "Al-Quran Cloud — Random Ayat": {
       "main": [[{ "node": "Normalize Input", "type": "main", "index": 0 }]]
     },
     "Normalize Input": {
@@ -153,12 +175,8 @@
       "main": [[{ "node": "Log Result", "type": "main", "index": 0 }]]
     }
   },
-  "settings": {
-    "executionOrder": "v1"
-  },
+  "settings": { "executionOrder": "v1" },
   "staticData": null,
-  "meta": {
-    "templateCredsSetupCompleted": true
-  },
+  "meta": { "templateCredsSetupCompleted": true },
   "tags": ["qalbu", "wisdom", "ingest"]
 }
