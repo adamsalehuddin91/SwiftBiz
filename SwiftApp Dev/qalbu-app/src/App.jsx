@@ -84,7 +84,7 @@ export default function App() {
               Qalbu
             </span>
             <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.25)' }}>
-              Santuan Jiwa Harian
+              Siraman Rohani Harian
             </p>
           </div>
           <button

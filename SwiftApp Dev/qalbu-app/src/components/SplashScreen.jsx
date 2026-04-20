@@ -56,7 +56,7 @@ export default function SplashScreen({ onDone }) {
             className="text-xs tracking-widest uppercase"
             style={{ color: 'rgba(255,255,255,0.3)' }}
           >
-            Santuan Jiwa Harian
+            Siraman Rohani Harian
           </span>
         </div>
       </div>
